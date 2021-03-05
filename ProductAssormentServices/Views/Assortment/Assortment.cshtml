@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Assortments>
+@{ Layout = "_Layout"; ViewBag.Title = "All Assortment";}
+
+<h2>All Assortments</h2>
+<a asp-action="AddAssortments" class="btn btn-sm btn-primary">Add Assortment</a>
+<a asp-action="GetAssortments" class="btn btn-sm btn-secondary">Get Assortment</a>
+
+<table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>Assortment ID</th>
+            <th>Assortment Name</th>
+            <th>Active From</th>
+            <th>Active To</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+        <tr>
+            <td>@r.AssrtmntId</td>
+            <td>@r.AssrtmntName</td>
+            <td>@r.AssrtmntActiveFrom</td>
+            <td>@r.AssrtmntActiveTo</td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+

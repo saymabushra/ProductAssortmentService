@@ -1,0 +1,57 @@
+﻿@model Assortments
+@{ Layout = "_Layout"; ViewBag.Title = "Product to Assortment";}
+
+<h2>Product To Assortments</h2>
+
+<style type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+</style>
+
+
+<form asp-action="ProductToAssortment" method="post">
+    <table>
+       
+        <tr>
+            <td></td>
+            <td>Add Product to Assortment</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                Assortment:
+            </td>
+            <td>
+                @Html.DropDownListFor(m => m.AssrtmntId, Model.AssortmentDropDownList, "Select Assortment")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Product:
+            </td>
+            <td>
+                <partial name="_ProductDropDown" model="Model" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Submit" />
+            </td>
+            
+        </tr>
+    </table>
+</form>
+
+
+
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.Message");
+        };
+    </script>
+}

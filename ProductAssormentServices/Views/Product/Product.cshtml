@@ -1,0 +1,30 @@
+﻿
+
+@model IEnumerable<Products>
+@{ Layout = "_Layout"; ViewBag.Title = "All Products";}
+
+<h2>All Products</h2>
+<a asp-action="AddProducts" class="btn btn-sm btn-primary">Add Product</a>
+<a asp-action="GetProducts" class="btn btn-sm btn-secondary">Get Product</a>
+
+<table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product EANcode</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.ProductId</td>
+                <td>@r.ProductName</td>
+                <td>@r.ProductEancode</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

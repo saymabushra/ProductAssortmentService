@@ -1,0 +1,73 @@
+﻿@model Assortments
+@{ Layout = "_Layout"; ViewBag.Title = "Add Assortments";}
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+
+
+<h2>Add Assortment <a asp-action="Assortment" class="btn btn-sm btn-primary">Back</a></h2>
+<form asp-action="AddAssortments" method="post">
+   
+    <div class="form-group">
+        <label for="AssrtmntName">Assortment Name:</label>
+        <input class="form-control" name="AssrtmntName" />
+    </div>
+    <div class="form-group">
+        <label for="AssrtmntActiveFrom">Assortment Active From:</label>
+        <input class="form-control" name="AssrtmntActiveFrom" id="AssrtmntActiveFrom" autocomplete="off" />
+    </div>
+    <div class="form-group">
+        <label for="AssrtmntActiveTo">Assortment Active To:</label>
+        <input class="form-control" name="AssrtmntActiveTo" id="AssrtmntActiveTo" autocomplete="off" />
+    </div>
+
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Add Assortment</button>
+    </div>
+</form>
+
+@if (Model != null)
+{
+    <h2>Add Assortment</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                
+                <th>Assortment Name</th>
+                <th>Assortment Active From</th>
+                <th>Assortment Active To</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                
+                <td>@Model.AssrtmntName</td>
+                <td>@Model.AssrtmntActiveFrom</td>
+                <td>@Model.AssrtmntActiveTo</td>
+
+            </tr>
+        </tbody>
+    </table>
+}
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.Message");
+        };
+    </script>
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#AssrtmntActiveFrom").datepicker();
+            $("#AssrtmntActiveTo").datepicker();
+        });
+    </script>
+
+}
+

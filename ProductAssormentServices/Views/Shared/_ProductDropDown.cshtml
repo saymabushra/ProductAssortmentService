@@ -1,0 +1,11 @@
+﻿@model Assortments
+@{ Layout = null; ViewBag.Title = "Product to Assortment Product drop down";}
+
+
+<select asp-for="ProductId">
+    <option value="-1">Select Product</option>
+    @foreach (var item in Model.ProductList)
+    {
+        <option value="@item.Value">@item.Text</option>
+    }
+</select>

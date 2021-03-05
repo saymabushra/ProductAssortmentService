@@ -1,0 +1,3 @@
+"ConnectionStrings": {
+    "PAMDataBase": "server=localhost;database=COOP_PAM;Trusted_Connection=True;"
+  }

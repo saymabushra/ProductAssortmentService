@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "1wm74pDOvfdKHKT2UMNsBByw5V8xhrq5guIIemlZaqzCoJndTnsVZ20h0iV3xJgH3yZddv5JVFK9gUN0a8QEBw==",
+  "success": true,
+  "projectFilePath": "D:\\COOP\\ProductAssormentServices\\ProductAssortmentServices.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Bushra\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Bushra\\.nuget\\packages\\restsharp\\106.11.7\\restsharp.106.11.7.nupkg.sha512"
+  ],
+  "logs": []
+}

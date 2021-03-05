@@ -1,0 +1,47 @@
+﻿@model Assortments
+@{ Layout = "_Layout"; ViewBag.Title = "Get Assortments by Id";}
+
+<h2>Get Assortment by Id <a asp-action="Assortment" class="btn btn-sm btn-secondary">Back</a></h2>
+<h3>@ViewBag.StatusCode</h3>
+<form method="post">
+    <div class="form-group">
+        <label for="id">Assortment ID:</label>
+        <input class="form-control" name="id" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-secondary">Get Assortment</button>
+    </div>
+</form>
+
+@if (Model != null)
+{
+    <h2>Assortments</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>Assortment ID</th>
+                <th>Assortment Name</th>
+                <th>Active From</th>
+                <th>Active To</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.AssrtmntId</td>
+                <td>@Model.AssrtmntName</td>
+                <td>@Model.AssrtmntActiveFrom</td>
+                <td>@Model.AssrtmntActiveTo</td>
+
+            </tr>
+        </tbody>
+    </table>
+}
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.Message");
+        };
+    </script>
+}

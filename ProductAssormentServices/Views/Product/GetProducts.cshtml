@@ -1,0 +1,45 @@
+﻿@model Products
+@{ Layout = "_Layout"; ViewBag.Title = "Get Products by Id";}
+
+<h2>Get Products by Id <a asp-action="Product" class="btn btn-sm btn-secondary">Back</a></h2>
+<h3>@ViewBag.StatusCode</h3>
+<form method="post">
+    <div class="form-group">
+        <label for="id">Prodcut ID:</label>
+        <input class="form-control" name="id" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-secondary">Get Products</button>
+    </div>
+</form>
+
+@if (Model != null)
+{
+    <h2>Products</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Product EAN Code</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.ProductId</td>
+                <td>@Model.ProductName</td>
+                <td>@Model.ProductEancode</td>
+
+            </tr>
+        </tbody>
+    </table>
+}
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.Message");
+        };
+    </script>
+}
